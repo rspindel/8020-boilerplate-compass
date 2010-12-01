@@ -1,0 +1,27 @@
+$label-width: 70px !default;
+$text-field-width: 150px !default;
+
+@mixin semantic-form($label-width: $label-width, $text-field-width: $text-field-width) {
+	ol {
+	  margin: 0;
+	  padding: 0;
+	}
+
+	li {
+	  list-style: none;
+	  padding: 5px;
+	  margin: 0;
+	}
+
+	label {
+		@include inline-block;
+
+	  line-height: 1.8;
+	  vertical-align: top;
+		width: $label-width;
+	}
+
+	input.text {
+		width: $text-field-width;
+	}
+}

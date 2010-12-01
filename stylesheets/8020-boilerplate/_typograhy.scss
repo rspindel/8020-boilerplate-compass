@@ -1,0 +1,122 @@
+$heading-font-family: $sans-serif-stack !default;
+$base-font-family: $serif-stack !default;
+$fixed-font-family: $monospace-stack !default;
+
+$base-font-size: 15px;
+$base-line-height: 1.5;
+
+$spacing: #{$base-line-height}em !default;
+$list-left-margin: 1.8em !default;
+
+$alt-font-color: #999 !default;
+$table-header-bg-color: #eee !default;
+$table-border-color: #ccc !default;
+
+@mixin body-typography {
+	#{headings(all)} {
+		font-family: $heading-font-family;
+		font-weight: normal;
+		line-height: 1;
+
+		a, a:visited, a:active, a:hover {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+
+	mark {
+		font-style: inherit;
+		font-weight: inherit;
+	}
+}
+
+@mixin typography-defaults {
+	address {
+		margin-bottom: $spacing;
+	}
+
+	blockquote {
+		margin: $spacing;
+		color: $alt-font-color;
+		font-style: italic;
+	}
+
+	del {
+		color: $alt-font-color;
+	}
+
+	h1 {
+		font-size: 3em;
+		margin-bottom: 0.5em;
+	}
+
+	h2 {
+		font-size: 2em;
+		margin-bottom: 0.75em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+		margin-bottom: 1em;
+	}
+
+	h4 {
+		font-size: 1.2em;
+		margin-bottom: 1.25em;
+	}
+
+	h5, h6 {
+		font-size: 1em;
+		font-weight: bold;
+	}
+
+	p {
+		margin-bottom: $spacing;
+	}
+
+	ul, ol {
+		margin-bottom: $spacing;
+
+		li & {
+			margin-bottom: 0;
+		}
+	}
+
+	pre {
+		margin-bottom: 1.67em;
+		padding: 0;
+		white-space: pre;
+	}
+
+	pre, code, kbd, samp {
+		font-family: $fixed-font-family;
+		font-size: 0.9em;
+	}
+
+	dl {
+		margin-bottom: $spacing;
+	}
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd {
+		margin-bottom: $spacing;
+		margin-left: $list-left-margin;
+	}
+
+	table {
+		margin-bottom: $spacing;
+		width: 100%;
+	}
+
+	thead th {
+		background-color: $table-header-bg-color;
+	}
+
+	th, td {
+		border: 1px solid $table-border-color;
+		padding: 2px 4px;
+	}
+}

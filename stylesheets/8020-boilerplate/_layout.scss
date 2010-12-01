@@ -1,0 +1,47 @@
+$body-span: 5 !default;
+$sidebar-span: 3 !default;
+
+$blueprint-grid-columns: ($body-span + $sidebar-span) !default;
+$blueprint-grid-width: 100px !default;
+$blueprint-grid-margin: 20px !default;
+
+@mixin body-as-container {
+	html {
+		height: 100%;
+	}
+
+	body {
+		margin: 0 auto;
+		min-height: 100%;
+	}
+}
+
+@mixin layout-sidebar-right($body-span: $body-span, $sidebar-span: $sidebar-span) {
+	@include body-as-container;
+
+	body {
+		@include container;
+	}
+
+	#primary-nav {
+		ul {
+			@include horizontal-list-container;
+
+			li {
+				@include horizontal-list-item;
+			}
+		}
+	}
+
+	#content {
+		@include column($body-span);
+	}
+
+	#sidebar {
+		@include column($sidebar-span, true);
+	}
+
+	#site-footer {
+		clear: both;
+	}
+}
