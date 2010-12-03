@@ -2,8 +2,15 @@ $heading-font-family: $sans-serif-stack !default;
 $base-font-family: $serif-stack !default;
 $fixed-font-family: $monospace-stack !default;
 
-$base-font-size: 15px;
-$base-line-height: 1.5;
+$base-font-size: 15px !default;
+$base-line-height: 1.5 !default;
+
+$heading-1-size: 2em !default;
+$heading-2-size: 2em !default;
+$heading-3-size: 1.5em !default;
+$heading-4-size: 1.2em !default;
+$heading-5-size: 1em !default;
+$heading-6-size: 1em !default;
 
 $spacing: #{$base-line-height}em !default;
 $list-left-margin: 1.8em !default;
@@ -12,8 +19,11 @@ $alt-font-color: #999 !default;
 $table-header-bg-color: #eee !default;
 $table-border-color: #ccc !default;
 
+$selected-font-color: #fff !default;
+$selected-background-color: #5e99ff !default;
+
 @mixin body-typography {
-	#{headings(all)} {
+	#{headings(all)}, .h1, .h2, .h3, .h4, .h5, .h6 {
 		font-family: $heading-font-family;
 		font-weight: normal;
 		line-height: 1;
@@ -28,6 +38,11 @@ $table-border-color: #ccc !default;
 		font-style: inherit;
 		font-weight: inherit;
 	}
+}
+
+@mixin paragraph-style($font-size: 1em, $line-height: $base-line-height) {
+	font-size: $font-size;
+	margin-bottom: ($line-height / $font-size * 1em * 1em);
 }
 
 @mixin typography-defaults {
@@ -45,29 +60,31 @@ $table-border-color: #ccc !default;
 		color: $alt-font-color;
 	}
 
-	h1 {
-		font-size: 3em;
-		margin-bottom: 0.5em;
-	}
-
-	h2 {
-		font-size: 2em;
-		margin-bottom: 0.75em;
-	}
-
-	h3 {
-		font-size: 1.5em;
-		margin-bottom: 1em;
-	}
-
-	h4 {
-		font-size: 1.2em;
-		margin-bottom: 1.25em;
-	}
-
-	h5, h6 {
-		font-size: 1em;
+	h1, .h1 {
+		@include paragraph-style($heading-1-size);
 		font-weight: bold;
+	}
+
+	h2, .h2 {
+		@include paragraph-style($heading-2-size);
+	}
+
+	h3, .h3 {
+		@include paragraph-style($heading-3-size);
+	}
+
+	h4, .h4 {
+		@include paragraph-style($heading-4-size);
+	}
+
+	h5, .h5 {
+		@include paragraph-style($heading-5-size);
+		font-weight: bold;
+	}
+
+	h6, .h6 {
+		@include paragraph-style($heading-6-size);
+		font-style: italic;
 	}
 
 	p {
