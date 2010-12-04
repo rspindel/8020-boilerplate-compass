@@ -5,6 +5,9 @@ $blueprint-grid-columns: ($body-span + $sidebar-span) !default;
 $blueprint-grid-width: 100px !default;
 $blueprint-grid-margin: 20px !default;
 
+@import 'blueprint/grid';
+@import "compass/utilities/lists/horizontal-list";
+
 @mixin body-as-container {
 	html {
 		height: 100%;
