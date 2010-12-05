@@ -19,13 +19,7 @@ $blueprint-grid-margin: 20px !default;
 	}
 }
 
-@mixin layout-sidebar-right($body-span: $body-span, $sidebar-span: $sidebar-span) {
-	@include body-as-container;
-
-	body {
-		@include container;
-	}
-
+@mixin horizontal-navigation {
 	#primary-nav {
 		ul {
 			@include horizontal-list-container;
@@ -35,6 +29,10 @@ $blueprint-grid-margin: 20px !default;
 			}
 		}
 	}
+}
+
+@mixin layout-sidebar-right($body-span: $body-span, $sidebar-span: $sidebar-span) {
+	@include container;
 
 	#content {
 		@include column($body-span);
