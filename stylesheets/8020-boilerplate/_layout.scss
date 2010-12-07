@@ -8,6 +8,10 @@ $blueprint-grid-margin: 20px !default;
 @import 'blueprint/grid';
 @import "compass/utilities/lists/horizontal-list";
 
+/*
+ * Allows the body element to be used as a container, thus getting rid of the
+ * need for a separate container element.
+ */
 @mixin body-as-container {
 	html {
 		height: 100%;
@@ -19,6 +23,9 @@ $blueprint-grid-margin: 20px !default;
 	}
 }
 
+/*
+ * Styles the navigation links as a horizontal list.
+ */
 @mixin horizontal-navigation {
 	#primary-nav {
 		ul {
@@ -31,6 +38,9 @@ $blueprint-grid-margin: 20px !default;
 	}
 }
 
+/*
+ * Styles the base WordPress template with a sidebar on the right.
+ */
 @mixin layout-sidebar-right($body-span: $body-span, $sidebar-span: $sidebar-span) {
 	@include container;
 

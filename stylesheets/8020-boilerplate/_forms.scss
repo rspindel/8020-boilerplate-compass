@@ -3,6 +3,9 @@ $text-field-width: 150px !default;
 
 @import "compass/css3/inline-block";
 
+/*
+ * Styles a form where each label and input pair is nested inside an ol > li.
+ */
 @mixin semantic-form($label-width: $label-width, $text-field-width: $text-field-width) {
 	ol {
 	  margin: 0;

@@ -2,6 +2,10 @@
 
 $background-color: white !default;
 
+/*
+ * Fixes some inconsistencies and adds a few missing defaults to the HTML5
+ * Boilerplate.
+ */
 @mixin html5-boilerplate-fixes {
 
 	/* Add background color */
@@ -14,8 +18,18 @@ $background-color: white !default;
 	a:active { color: $link-visited-color; }
 	a:visited { color: $link-visited-color; }
 	a:hover { color: $link-hover-color; }
+
+	/* Remove highlight font styling */
+	mark {
+		font-style: inherit;
+		font-weight: inherit;
+	}
 }
 
+/*
+ * Used just like the column mixin in Compass but comes with support for border
+ * widths. $border-width = left border and padding + right border and padding.
+ */
 @mixin column-with-border-width($n, $border-width, $last: false) {
 	@include column-base($last);
 

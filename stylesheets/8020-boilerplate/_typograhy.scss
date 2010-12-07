@@ -22,6 +22,10 @@ $table-border-color: #ccc !default;
 $selected-font-color: #fff !default;
 $selected-background-color: #5e99ff !default;
 
+/*
+ * Document-wide typographic defaults. Currently only sets base heading styles
+ * and links inside headings.
+ */
 @mixin body-typography {
 	#{headings(all)}, .h1, .h2, .h3, .h4, .h5, .h6 {
 		font-family: $heading-font-family;
@@ -33,18 +37,19 @@ $selected-background-color: #5e99ff !default;
 			text-decoration: none;
 		}
 	}
-
-	mark {
-		font-style: inherit;
-		font-weight: inherit;
-	}
 }
 
+/*
+ * A utility mixin for setting paragraph font size and bottom margin.
+ */
 @mixin paragraph-style($font-size: 1em, $line-height: $base-line-height) {
 	font-size: $font-size;
 	margin-bottom: ($line-height / $font-size * 1em * 1em);
 }
 
+/*
+ * Sensible typographic defaults. Adapted from the Blueprint Compass module.
+ */
 @mixin typography-defaults {
 	address {
 		margin-bottom: $spacing;
