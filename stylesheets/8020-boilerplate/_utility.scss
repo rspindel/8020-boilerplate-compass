@@ -19,5 +19,5 @@ $background-color: white !default;
 @mixin column-with-border-width($n, $border-width, $last: false) {
 	@include column-base($last);
 
-	width: $blueprint_grid_width * $n + $blueprint_grid_margin * ($n - 1) - 2 * $border-width;
+	width: $blueprint_grid_width * $n + $blueprint_grid_margin * ($n - 1) - $border-width;
 }

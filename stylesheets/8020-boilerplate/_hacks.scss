@@ -1,7 +1,0 @@
-@mixin html5-boilerplate-fixes {
-	/* Fix an inconsistency in the HTML5 Boilerplate Compass extension */
-	a { color: $link-color; }
-	a:active { color: $link-visited-color; }
-	a:visited { color: $link-visited-color; }
-	a:hover { color: $link-hover-color; }
-}
