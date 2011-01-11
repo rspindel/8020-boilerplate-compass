@@ -1,8 +1,8 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.version = "0.0.8"
-  s.date = "2010-12-01"
+  s.version = "0.0.9"
+  s.date = "2011-01-11"
 
   s.name = "8020-boilerplate-compass"
   s.authors = ["Janne Asmala"]
